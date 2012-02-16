@@ -1,5 +1,5 @@
 # HOLBoilerplate
-**__H5BP-OOCSS-LESS-BBBP Boilerplate__**
+__H5BP-OOCSS-LESS-BBBP Boilerplate__
 
 
 ## Build Steps:
