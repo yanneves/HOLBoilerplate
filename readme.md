@@ -2,6 +2,7 @@
 
 
 ## Build Steps:
+
 1. Preprocess `.less` files into `.css`
 2. Move production files into `/http`
 3. Run Ant Build Script
@@ -18,11 +19,9 @@ Github:
 	(fork) `git@github.com:Aaunel/ant-build-script.git`
 
 ### LESS
-* "The dynamic stylesheet language"
-* Branch:
-	* `css/less/build`
-* Github:
-	* (fork) `git@github.com:Aaunel/less.js.git`
+> "The dynamic stylesheet language"
+> Branch: `css/less/build`
+> Github: (fork) `git@github.com:Aaunel/less.js.git`
 
 
 ## JavaScript
