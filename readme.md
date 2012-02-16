@@ -15,7 +15,7 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 __Ant Build Script__  
 
 > "Optimizes your code for production"  
-> Branch: `//build/`  
+> Branch: `compile/`  
 > Github: (fork) `git@github.com:Aaunel/ant-build-script.git`  
 
 __LESS__  
