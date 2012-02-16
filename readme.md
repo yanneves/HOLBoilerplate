@@ -1,4 +1,4 @@
-[Hello Boilerplate!]
+# Hello Boilerplate!
 
 
 Build Steps:
@@ -8,51 +8,47 @@ Build Steps:
 	4. Deploy `/http` for production
 
 
-============================================================
---- Preprocessing ---
-============================================================
+## Preprocessing
 
-Ant Build Script
+### Ant Build Script
 "Optimizes your code for production"
 Branch:
 	`build/`
 Github:
 	(fork) `git@github.com:Aaunel/ant-build-script.git`
-____________________________________________________________
-LESS
-"The dynamic stylesheet language"
-Branch:
-	`css/less/build`
-Github:
-	(fork) `git@github.com:Aaunel/less.js.git`
+
+### LESS
+* "The dynamic stylesheet language"
+* Branch:
+** `css/less/build`
+* Github:
+** (fork) `git@github.com:Aaunel/less.js.git`
 
 
-============================================================
---- JavaScript ---
-============================================================
+## JavaScript
 
-jQuery
+### jQuery
 "New Wave JavaScript"
 Branch:
 	js/libs/jquery/jquery.js
 Github:
 	(fork) git@github.com:Aaunel/jquery.git
-____________________________________________________________
-Head
+
+### Head
 "The only script in your <HEAD>"
 Branch:
 	js/head/head.js
 Github:
 	(fork) git@github.com:Aaunel/headjs.git
-____________________________________________________________
-Backbone
+
+### Backbone
 "MV* library"
 Branch:
 	js/libs/backbone/backbone.js
 Github:
 	(fork) git@github.com:Aaunel/backbone.git
-____________________________________________________________
-Underscore
+
+### Underscore
 "Utility-belt library"
 Branch:
 	js/libs/underscore/underscore.js
