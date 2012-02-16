@@ -1,11 +1,11 @@
 # Hello Boilerplate!
 
 
-Build Steps:
-	1. Preprocess `.less` files into `.css`
-	2. Move production files into `/http`
-	3. Run Ant Build Script
-	4. Deploy `/http` for production
+## Build Steps:
+1. Preprocess `.less` files into `.css`
+2. Move production files into `/http`
+3. Run Ant Build Script
+4. Deploy `/http` for production
 
 
 ## Preprocessing
@@ -20,9 +20,9 @@ Github:
 ### LESS
 * "The dynamic stylesheet language"
 * Branch:
-** `css/less/build`
+	* `css/less/build`
 * Github:
-** (fork) `git@github.com:Aaunel/less.js.git`
+	* (fork) `git@github.com:Aaunel/less.js.git`
 
 
 ## JavaScript
