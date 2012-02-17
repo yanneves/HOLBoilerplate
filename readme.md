@@ -2,7 +2,9 @@
 __H5BP-OOCSS-LESS-BBBP Boilerplate__
 
 
-## File Structure
+## Documentation
+
+### File Structure
 ```
 .
 +-- http (volatile)
@@ -37,7 +39,7 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 ```
 
 
-## Build Steps:
+### Build Steps:
 
 1. __Preprocess__ `.less` files into `.css`
 2. __Move__ production files into `http/`
@@ -45,16 +47,16 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 4. __Deploy__ `http/` for production
 
 
-## Preprocessing
+### Preprocessing
 
-__Ant Build Script__  
+#### Ant Build Script
 
 > "Optimizes your code for production"  
 > Reduces application weight for deployment to production.  
 > Branch: `compile/`  
 > Github: `git://github.com/h5bp/ant-build-script.git`  
 
-__LESS__  
+#### LESS
 
 > "The dynamic stylesheet language"  
 > Tool for coding scalable cascading stylesheets.  
@@ -62,34 +64,45 @@ __LESS__
 > Github: `git://github.com/cloudhead/less.js.git`  
 
 
-## JavaScript
+### JavaScript
 
-__jQuery__  
+#### jQuery
 
 > "New Wave JavaScript"  
 > Standard library for DOM interaction.  
 > Dependencies: none  
 > Github: `git://github.com/jquery/jquery.git`  
 
-__Head__  
+#### Head
 
 > "The only script in your \<HEAD\>"  
 > Used as a modular asynchronous script loader and modernizr.  
 > Dependencies: none  
 > Github: `git://github.com/headjs/headjs.git`  
 
-__Backbone__  
+#### Backbone
 
 > "MV* library"  
 > Templating library.  
 > Dependencies: `jQuery.js, Underscore.js`  
 > Github: `git://github.com/documentcloud/backbone.git`  
 
-__Underscore__  
+#### Underscore
 
 > "Utility-belt library"  
 > Extended library for common functions.  
 > Github: `git://github.com/documentcloud/underscore.git`  
-  
-  
-:)
+
+
+## Goals & Milestones
+
+### Feature Requests
+
+* small batch process to run build steps above
+* boilerplate needs testing
+
+### Releases
+
+* (2012-02-17) v0.1 HOLBoilerplate scraped together following years of experience and perfectionism
+
+: )
