@@ -50,14 +50,16 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 __Ant Build Script__  
 
 > "Optimizes your code for production"  
+> Reduces application weight for deployment to production.  
 > Branch: `compile/`  
-> Github: (fork) `git@github.com:Aaunel/ant-build-script.git`  
+> Github: `git://github.com/h5bp/ant-build-script.git`  
 
 __LESS__  
 
 > "The dynamic stylesheet language"  
+> Tool for coding scalable cascading stylesheets.  
 > Branch: `//css/less/build`  
-> Github: (fork) `git@github.com:Aaunel/less.js.git`  
+> Github: `git://github.com/cloudhead/less.js.git`  
 
 
 ## JavaScript
@@ -65,26 +67,29 @@ __LESS__
 __jQuery__  
 
 > "New Wave JavaScript"  
-> Branch: `//js/libs/jquery/jquery.js`  
-> Github: (fork) `git@github.com:Aaunel/jquery.git`  
+> Standard library for DOM interaction.  
+> Dependencies: none  
+> Github: `git://github.com/jquery/jquery.git`  
 
 __Head__  
 
 > "The only script in your \<HEAD\>"  
-> Branch: `//js/head/head.js`  
-> Github: (fork) `git@github.com:Aaunel/headjs.git`  
+> Used as a modular asynchronous script loader and modernizr.  
+> Dependencies: none  
+> Github: `git://github.com/headjs/headjs.git`  
 
 __Backbone__  
 
 > "MV* library"  
-> Branch: `//js/libs/backbone/backbone.js`  
-> Github: (fork) `git@github.com:Aaunel/backbone.git`  
+> Templating library.  
+> Dependencies: `jQuery.js, Underscore.js`  
+> Github: `git://github.com/documentcloud/backbone.git`  
 
 __Underscore__  
 
 > "Utility-belt library"  
-> Branch: `//js/libs/underscore/underscore.js`  
-> Github: (fork) `git@github.com:Aaunel/underscore.git`  
+> Extended library for common functions.  
+> Github: `git://github.com/documentcloud/underscore.git`  
   
   
 :)
