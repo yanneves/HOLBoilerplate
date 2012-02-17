@@ -7,31 +7,31 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 .
 +-- http (volatile)
 +-- http_dev
-¦   +-- app
-¦   +-- css
-¦   +-- js
-¦   +-- img
-¦   +-- test
-¦   --- .gitattributes
-¦   --- .gitignore
-¦   --- .htaccess
-¦   --- crossdomain.xml
-¦   --- index.html
-¦   --- 404.html
-¦   --- core.css
-¦   --- core.js
-¦   --- favicon.ico
-¦   --- apple-touch-icon.png
-¦   --- apple-touch-icon-precomposed.png
-¦   --- apple-touch-icon-57x57-precomposed.png
-¦   --- apple-touch-icon-72x72-precomposed.png
-¦   --- apple-touch-icon-114x114-precomposed.png
-¦   --- humans.txt
-¦   --- robots.txt
+|   +-- app
+|   +-- css
+|   +-- js
+|   +-- img
+|   +-- test
+|   --- .gitattributes
+|   --- .gitignore
+|   --- .htaccess
+|   --- crossdomain.xml
+|   --- index.html
+|   --- 404.html
+|   --- core.css
+|   --- core.js
+|   --- favicon.ico
+|   --- apple-touch-icon.png
+|   --- apple-touch-icon-precomposed.png
+|   --- apple-touch-icon-57x57-precomposed.png
+|   --- apple-touch-icon-72x72-precomposed.png
+|   --- apple-touch-icon-114x114-precomposed.png
+|   --- humans.txt
+|   --- robots.txt
 +-- working
-¦   +-- requirements
-¦   +-- designs
-¦   +-- wireframes
+|   +-- requirements
+|   +-- designs
+|   +-- wireframes
 +-- build (nodejs deploy)
 +-- compile (ant-build-script)
 ```
