@@ -17,6 +17,7 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 |   --- .htaccess
 |   --- crossdomain.xml
 |   --- index.html
+|   --- elements.html
 |   --- 404.html
 |   --- core.css
 |   --- core.js

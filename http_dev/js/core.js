@@ -1,6 +1,6 @@
 /*
  * <Primary Scripts>
- * Author: Aaunel
+ * Author: 
  */
  
 /* Table of Contents
@@ -11,7 +11,6 @@
 3	Parallel-Loaded Scripts
 4	Functions
 		SAS
-5	Google Analytics
 6	Initiation
 
 */
@@ -19,18 +18,25 @@
 /* References
 -----------------------------------------------
 SAS -> stand-alone script
-VIDEO -> videojs
-GA	-> Google Analytics
 
 */
 
 /* Parallel-Loaded Scripts
 ----------------------------------------------- */
 head.js(
-	{jquery:'http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'},
-	{videojs:'/js/libs/video.min.js'}//,
-	//{analytics:'http://www.google-analytics.com/ga.js'}
+	{jquery:'//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'},
+	{underscore:'//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.1/underscore-min.js'},
+	{backbone:'//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.0/backbone-min.js'},
+	{backbone_localStorage:'//cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js'}
 );
+
+if(head.browser.ie == true && parseInt(head.browser.version) < 7){
+	head.js('//cdnjs.cloudflare.com/ajax/libs/dd_belatedpng/0.0.8/dd_belatedpng.min.js',
+		function(){
+			DD_belatedPNG.fix('img, .png_bg');
+		}
+	);
+}
 
 /* Functions
 ----------------------------------------------- */
@@ -40,27 +46,6 @@ SAS = {
 	}
 };
 
-VIDEO = {
-	init: function() {
-		if($('#video').length){
-			VIDEO.run();
-		}
-	},
-	run: function() {
-		VideoJS.setupAllWhenReady();
-	}
-};
-
-/* Google Analytics
------------------------------------------------ 
-GA = {
-	init:function(){
-		var _gaq = [['_setAccount', 'UA-xxxxxxxx-x'], ['_trackPageview']];
-	}
-}; */
-
 /* Initiation
 ----------------------------------------------- */
 head.ready('jquery',SAS.init);
-head.ready('videojs',VIDEO.init);
-//head.ready('analytics',GA.init);
