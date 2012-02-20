@@ -34,13 +34,13 @@ dwsync.xml
 .hg
 .svn
 .CVS
-intermediate
-publish
+working
+http
 .idea
 
 # build script local files
-# build/buildinfo.properties
-# build/config/buildinfo.properties
+build/buildinfo.properties
+build/config/buildinfo.properties
 
 # backbone-boilerplate ignores
 dist/
