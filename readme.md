@@ -14,8 +14,6 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 |   +-- js
 |   +-- img
 |   +-- test
-|   --- .gitattributes
-|   --- .gitignore
 |   --- .htaccess
 |   --- crossdomain.xml
 |   --- index.html
@@ -34,8 +32,11 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 |   +-- requirements
 |   +-- designs
 |   +-- wireframes
-+-- build (nodejs deploy)
-+-- compile (ant-build-script)
++-- deploy (nodejs deploy)
++-- build (ant-build-script)
+--- .gitattributes
+--- .gitignore
+--- readme.md
 ```
 
 
@@ -53,7 +54,7 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 
 > "Optimizes your code for production"  
 > Reduces application weight for deployment to production.  
-> Branch: `compile/`  
+> Branch: `build/`  
 > Github: `git://github.com/h5bp/ant-build-script.git`  
 
 #### LESS
