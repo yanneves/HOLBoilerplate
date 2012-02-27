@@ -25,11 +25,16 @@
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-	<link rel="stylesheet" href="css/core.css">
+	<!-- LESS converted to css and minified via build script -->
+  		<link rel="stylesheet/less" href="css/less/core.less">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.1.5/less-1.1.5.min.js"></script>
+	<!-- end LESS -->
+
+	<!-- link rel="stylesheet" href="css/core.css" -->
 
 	<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
-	<script src="js/modules/head.js"></script>
+	<script src="js/head.js"></script>
 
 </head>
 
@@ -47,7 +52,7 @@
 
 		<pre>Hello Boilerplate!</pre>
 		
-		<p>Hello Boilerplate!</p>
+		<p class="less-styles-this">Hello Boilerplate!</p>
 
 	</div>
 	<footer>

@@ -7,38 +7,30 @@
 -----------------------------------------------
 
 1	_Table of Contents
-2	_References
-3	_Layout
-4	_Typography
-5	_Links
-6	_Forms
-7	_Modules
+2	_Helpers
+3	_Variables
+4	_Layout
+5	_Typography
+6	_Links
+7	_Forms
+8	_Modules
 		_Header Styles
 		_Complementary Styles
 		_Main Body Styles
 		_Footer Styles
-8	_Temporary Styles
+9	_Temporary Styles
 		_Title
-9	_Media Queries
+10	_Media Queries
 		_Portrait Styles
 		_Landscape Styles
 		_Mobile Browsers
-10	_Print Styles
+11	_Print Styles
 
 */
 
-/* _References
+/* _Helpers
 -----------------------------------------------
 
-Colour Theme
- Body bg:			#FFF
- Container bg		#FFF
- Spotlight bg		#666
- Text				#444
- Highlight			#FF5E99
- Hairline			#666
-
-Helper Classes
  .ir				for image replacement
  .hidden			hide for both screenreaders and browsers
  .visuallyhidden	hide only visually,
@@ -47,7 +39,19 @@ Helper Classes
 					but maintain layout
  .clearfix			the magnificent clearfix
 
- */
+*/
+
+/* _Variables
+-----------------------------------------------
+
+Colour Theme
+@bg: #FFF;
+@fg: #FFF;
+@textColour: #444;
+@highlight: #FF5E99;
+@line: #666;
+
+*/
 
 /* _Layout
 ----------------------------------------------- */

@@ -24,10 +24,15 @@ SAS -> stand-alone script
 /* Parallel-Loaded Scripts
 ----------------------------------------------- */
 head.js(
+	// libraries
 	{jquery:'//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js'},
 	{underscore:'//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.1/underscore-min.js'},
 	{backbone:'//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.0/backbone-min.js'},
-	{backbone_localStorage:'//cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js'}
+	{backbone_localStorage:'//cdnjs.cloudflare.com/ajax/libs/backbone-localstorage.js/1.0/backbone.localStorage-min.js'},
+	// application
+	{namespace:'/app/'}//,
+	//{backbone:'//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.0/backbone-min.js'},
+	//{backbone:'//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.0/backbone-min.js'}
 );
 
 if(head.browser.ie == true && parseInt(head.browser.version) < 7){
@@ -46,6 +51,13 @@ SAS = {
 	}
 };
 
+INDEX = {
+	init:function(){
+		// stand-alone script
+	}
+};
+
 /* Initiation
 ----------------------------------------------- */
-head.ready('jquery',SAS.init);
+head.ready(SAS.init);
+head.ready(INDEX.init);
