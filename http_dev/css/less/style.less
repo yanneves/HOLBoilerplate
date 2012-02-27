@@ -18,13 +18,11 @@
 		_Complementary Styles
 		_Main Body Styles
 		_Footer Styles
-9	_Temporary Styles
-		_Title
-10	_Media Queries
+9	_Media Queries
 		_Portrait Styles
 		_Landscape Styles
-		_Mobile Browsers
-11	_Print Styles
+		_Desktop Browsers
+10	_Print Styles
 
 */
 
@@ -55,8 +53,9 @@ Colour Theme
 
 /* _Layout
 ----------------------------------------------- */
-body{ overflow-y:scroll; background-color:#FFF;}
-.container{ width:960px; margin:0 auto 30px;}
+html{ overflow-y:scroll;}
+body{ background-color:#FFF;}
+.container{ max-width:960px; margin:0 auto 30px;}
 header{ }
 .body{ color:#444;}
 .hairline{ border-bottom:1px solid #CCC;}
@@ -126,26 +125,22 @@ input:invalid, textarea:invalid {
 /* _Footer Styles */
 
 
-/* _Temporary Styles - delete upon expiry
------------------------------------------------ */
-/* _Title */
-
 
 /* _Media Queries - for responsive design
 ----------------------------------------------- */
 /* _Portrait Styles */
-@media all and (orientation:portrait) { 
+@media all and (orientation:portrait){
 	
 }
 
 /* _Landscape Styles */
-@media all and (orientation:landscape) { 
+@media all and (orientation:landscape){
 	
 }
 
-/* _Mobile Browsers (Opera Mobile, iPhone Safari, Android Chrome) */
-@media screen and (max-device-width: 480px) {
-	html{ -webkit-text-size-adjust:none; -ms-text-size-adjust:none;}
+/* _Desktop Browsers */
+@media screen and (min-width: 800px){
+	
 }
 
 /* _Print Styles

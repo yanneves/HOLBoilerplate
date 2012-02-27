@@ -2,6 +2,35 @@
 __H5BP-OOCSS-LESS-BBBP Boilerplate__
 
 
+## Runtime Structure
+
+```
+-> 	Meta Headers
+	-> 	Chromeframe
+	-> 	DNS-Prefetch
+	-> 	Title, Description
+	-> 	Viewport Optimised
+-> 	Core CSS
+	-> 	Link to single, minified,
+		concatenated, obfuscated,
+		LESS-preprocessed, versioned,
+		stylesheet
+-> 	Head JS
+	-> 	Modernizr
+	->	Respond
+	->	Head (loader)
+	-> 	Log Handling
+-> 	Body
+	->	Header
+	->	Body
+	->	Footer
+->	Core JS
+	->	Asynchronous Scripts
+	->	Application Index
+->	Google Analytics
+```
+
+
 ## Documentation
 
 ### File Structure
@@ -9,18 +38,27 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 .
 +-- http (volatile)
 +-- http_dev
-|   +-- app
 |   +-- css
+|   |   +-- less
+|   |   |   --- core.less
+|   |   |   --- style.less
+|   |   +-- modules
+|   |   |   --- grids.css
+|   |   |   --- sprites.css
+|   |   |   --- reset.css
 |   +-- js
+|   |   +-- modules
+|   |   --- head.js
+|   |   --- core.js
 |   +-- img
+|   +-- fonts
 |   +-- test
 |   --- .htaccess
 |   --- crossdomain.xml
 |   --- index.html
 |   --- elements.html
+|   --- grids.html
 |   --- 404.html
-|   --- core.css
-|   --- core.js
 |   --- favicon.ico
 |   --- apple-touch-icon.png
 |   --- apple-touch-icon-precomposed.png
@@ -33,7 +71,6 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 |   +-- requirements
 |   +-- designs
 |   +-- wireframes
-+-- deploy (nodejs deploy)
 +-- build (ant-build-script)
 --- .gitattributes
 --- .gitignore
@@ -44,9 +81,8 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 ### Build Steps:
 
 1. __Preprocess__ `.less` files into `.css`
-2. __Move__ production files into `http/`
-3. __Run__ Ant Build Script
-4. __Deploy__ `http/` for production
+2. __Run__ Ant Build Script
+3. __Deploy__ `http/` for production
 
 
 ### Preprocessing
@@ -62,8 +98,25 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 
 > "The dynamic stylesheet language"  
 > Tool for coding scalable cascading stylesheets.  
-> Branch: `//css/less/build`  
 > Github: `git://github.com/cloudhead/less.js.git`  
+
+
+### CSS
+
+#### Reset
+
+> HTML5 Boilerplate stylesheet for normalization.  
+> Namespace: _All_ elements, helpers  
+
+#### Grids
+
+> OOCSS elastic grid layout  
+> Namespace: `.line`, `.unit`  
+
+#### Sprites
+
+> Blank library for sprite management  
+> Namespace: none  
 
 
 ### JavaScript
@@ -75,12 +128,32 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 > Dependencies: none  
 > Github: `git://github.com/jquery/jquery.git`  
 
+#### Modernizr
+
+> "Front-end development done right"  
+> For feature detection and polyfilling.  
+> Dependencies: none  
+> Github: `git://github.com/Modernizr/Modernizr.git`  
+
+#### Respond
+
+> "A fast & lightweight polyfill for min/max-width CSS3 Media Queries"  
+> CSS3 Media Queries polyfill.  
+> Dependencies: none  
+> Github: `git://github.com/scottjehl/Respond.git`  
+
 #### Head
 
 > "The only script in your \<HEAD\>"  
-> Used as a modular asynchronous script loader and modernizr.  
+> Used as a modular asynchronous script loader.  
 > Dependencies: none  
 > Github: `git://github.com/headjs/headjs.git`  
+
+#### Underscore
+
+> "Utility-belt library"  
+> Extended library for common functions.  
+> Github: `git://github.com/documentcloud/underscore.git`  
 
 #### Backbone
 
@@ -88,12 +161,6 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 > Templating library.  
 > Dependencies: `jQuery.js, Underscore.js`  
 > Github: `git://github.com/documentcloud/backbone.git`  
-
-#### Underscore
-
-> "Utility-belt library"  
-> Extended library for common functions.  
-> Github: `git://github.com/documentcloud/underscore.git`  
 
 
 ## Goals & Milestones
