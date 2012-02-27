@@ -48,6 +48,7 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 |   |   |   --- reset.css
 |   +-- js
 |   |   +-- modules
+|   |   +-- templates
 |   |   --- head.js
 |   |   --- core.js
 |   +-- img
