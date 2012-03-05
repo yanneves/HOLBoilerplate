@@ -36,6 +36,7 @@ dwsync.xml
 .CVS
 working/*
 http/*
+http_temp/*
 .idea
 
 # build script local files

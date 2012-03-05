@@ -1,0 +1,3 @@
+-> Extract `build` folder into `less` folder.  
+-> cmd `cscript //nologo lessc.wsf core.less ../core.css`
+-> Delete `less` folder.
