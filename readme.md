@@ -81,9 +81,12 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 
 ### Build Steps:
 
+> `build/HOLBuild.bat` now handles this!
+
 1. __Preprocess__ `.less` files into `.css`
-2. __Run__ Ant Build Script
-3. __Deploy__ `http/` for production
+2. __Replace__ calls to `.less` files with call to `.css`
+3. __Run__ Ant Build Script
+4. __Deploy__ `http/` for production
 
 
 ### Preprocessing
@@ -168,11 +171,11 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 
 ### Feature Requests
 
-* small batch process to run build steps above
 * boilerplate needs testing
 
 ### Releases
 
+* (2012-03-05) v0.2 HOLBuild implemented for customised build process
 * (2012-02-17) v0.1 HOLBoilerplate scraped together following years of experience and perfectionism
 
 : )
