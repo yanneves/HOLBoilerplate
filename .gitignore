@@ -34,8 +34,8 @@ dwsync.xml
 .hg
 .svn
 .CVS
-#working/*
-#http/*
+working/*
+http/*
 .idea
 
 # build script local files
