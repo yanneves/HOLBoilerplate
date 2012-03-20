@@ -3,31 +3,42 @@ set nl =^&echo.
 
 echo "# Set variables."
 set dev_dir=../http_dev
-set temp_dir=../http_temp
+set temp_dir=../working/http_temp
+set prod_dir=../http
+set tools_dir=tools
+set config_dir=config
 set css_dir=css
-set less_dir=css/less
+set less_dir=css
+set js_dir=js
 
 set css_core=core.css
 set less_core=core.less
 set less_js=http://cdnjs.cloudflare.com/ajax/libs/less.js/1.1.5/less-1.1.5.min.js
+set js_core=core.js
 
-set less_call="<link rel=\"stylesheet/less\" href=\"%less_dir%/%less_core%\">"
+set less_call="<link rel=\"stylesheet/less\" href=\"/%less_dir%/%less_core%\">"
 set lessjs_call="<script src=\"%less_js%\"></script>"
-set css_call="<link rel=\"stylesheet/css\" href=\"%css_dir%/%css_core%\">"
+set css_call="<link rel=\"stylesheet\" href=\"/%css_dir%/%css_core%\">"
 
-set fart=tools\fart.exe
+set rhino=%tools_dir%\rhino.jar
+set closure_compiler=%tools_dir%\closure-compiler-v1346.jar
+set less_compiler=%tools_dir%\lessc.wsf
+set r_js=%tools_dir%\r.js
+set fart=%tools_dir%\fart.exe
 set build_script=runbuildscript.bat
+
+set r_config=app.build.js
 
 echo.
 
 echo "# Copying development files into temporary directory."
-xcopy "%dev_dir%" "%temp_dir%" /S /K /Y
+rd /s /q "%temp_dir%"
+echo d | xcopy "%dev_dir%" "%temp_dir%" /S /K /Y
 
 echo.
 
 echo "# Building LESS stylesheets."
-cscript //nologo "%temp_dir%\%less_dir%\build\lessc.wsf" "%temp_dir%\%less_dir%\%less_core%" "%temp_dir%\%css_dir%\%css_core%"
-echo y | rd /s "%temp_dir%\%less_dir%"
+cscript //nologo "%less_compiler%" "%temp_dir%\%less_dir%\%less_core%" "%temp_dir%\%css_dir%\%css_core%"
 
 echo.
 
@@ -42,3 +53,10 @@ echo.
 
 echo "# Running Ant-Build-Script."
 call %build_script%
+
+echo.
+
+echo "# Removing uncompliant JavaScript."
+rd /s /q "%prod_dir%\%js_dir%"
+echo "# Running r.js compiler."
+java -classpath %rhino%;%closure_compiler% org.mozilla.javascript.tools.shell.Main %r_js% -o %config_dir%\%r_config%

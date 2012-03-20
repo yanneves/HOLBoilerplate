@@ -139,7 +139,7 @@
 
         <else>
             <!-- Build a production environment -->
-            <echo message="Building a Production Environment..."/>
+            <echo message="Building a Full Production Environment..."/>
             <antcall target="-build.production" />
         </else>
     </if>
@@ -254,7 +254,7 @@
                    -manifest,
                    -copy"/>
 
-  <target name="-basics.production"
+	<target name="-basics.production"
           depends="-intro,
                    -usemin,
                    -js.all.minify,
@@ -350,13 +350,23 @@
                    -imagesjpg,
                    -copy"/>
 
-  <target name="-build.production"
+  <!-- target name="-build.production"
           depends="-intro,
                    -usemin,
                    -js.all.minify,
                    -js.main.concat,
                    -js.mylibs.concat,
                    -js.scripts.concat,
+                   -css,
+                   -manifest,
+                   -htmlclean,
+                   -imagespng,
+                   -imagesjpg,
+                   -copy"/ -->
+
+	<target name="-build.production"
+          depends="-intro,
+                   -usemin,
                    -css,
                    -manifest,
                    -htmlclean,

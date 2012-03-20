@@ -1,0 +1,207 @@
+/*
+ * <Core>
+ * Author: 
+ */
+
+/* =Table of Contents=
+-----------------------------------------------
+
+01|	=Table of Contents=
+02|	=References=
+  |		=Helper Classes=
+03|	=Imports=
+  |		=CSS Modules=
+  |		=LESSooCSS=
+  |		=LESS Modules=
+04|	=Variables=
+  |		=Sizing=
+  |		=Colour Scheme=
+05|	=Layout=
+06|	=Typography=
+07|	=Links=
+08|	=Forms=
+09|	=Mods=
+  |		=Header Styles=
+  |		=Complementary Styles=
+  |		=Main Body Styles=
+  |		=Footer Styles=
+10|	=Media Queries=
+  |		=Portrait Styles=
+  |		=Landscape Styles=
+  |		=Desktop Browsers=
+11|	=Print Styles=
+
+*/
+
+/* =References=
+-----------------------------------------------
+
+	=Sizing=
+	sizing in 'em': 1'em' = 16'px'
+
+	=Helper Classes=
+	.texthidden		for image replacement
+	.hidden			hide for both screenreaders and browsers
+	.visuallyhidden	hide only visually,
+					but have it available for screenreaders
+	.invisible		hide visually and from screenreaders,
+					but maintain layout
+	.clearfix		the magnificent clearfix
+
+*/
+
+/* =Imports=
+----------------------------------------------- */
+
+	/* =CSS Modules= */
+	@import "modules/normalize.css.less";
+	@import "modules/zocial.css.less";
+	
+	/* =LESSooCSS= */
+	@import "modules/lessoocss/grids.css.less";
+	
+	/* =LESS Modules= */
+	@import "modules/helpers";
+	@import "modules/sprites";
+
+
+
+/* =Variables=
+----------------------------------------------- */
+
+	/* =Colour Scheme= */
+	@bg: #FFF;
+	@fg: #FFF;
+	@textColor: #444;
+	@highlight: #FF5E99;
+	@line: #666;
+
+
+
+/* =Layout=
+----------------------------------------------- */
+
+	html{ overflow-y:scroll;}
+	body{ background-color:@bg; .optimizeLegibility}
+	.container{ max-width:960px; margin:0 auto 30px; background-color:@fg;}
+	header{ }
+	.body{ color:@textColor;}
+	.hairline{ border-bottom:1px solid @line;}
+	footer{ }
+	
+	.chromeframe{ margin:0.2em 0; background:#CCC; color:black; padding:0.2em 0;}
+
+
+
+/* =Typography=
+----------------------------------------------- */
+
+	h1, .h1{ }
+	h2, .h2{ }
+	h3, .h3{ }
+	h4, .h4{ }
+	h5, .h5{ }
+	h6, .h6{ }
+
+	p{ }
+
+	.body ul{ }
+	.body ul li{ }
+
+	.body ol{ }
+	.body ol li{ }
+
+	small{ }
+
+	strong{ }
+	em{ }
+
+	blockquote{ }
+	cite{ }
+
+	::-moz-selection{ background:@highlight; color:@bg; text-shadow:none;}
+	::selection{ background:@highlight; color:@bg; text-shadow:none;}
+
+
+
+/* =Links=
+----------------------------------------------- */
+
+	a:link, a:visited{ text-decoration:none; -webkit-tap-highlight-color:#FF5E99;}
+	a:hover, a:focus{ text-decoration:underline;}
+
+
+
+/* =Forms=
+----------------------------------------------- */
+
+	label{ padding:15px 10px 15px 5px; font-size:1.2em;}
+	input{ }
+	select{ }
+	button{ }
+	input:valid, textarea:valid{ }
+	input:invalid, textarea:invalid {
+		  border-radius: 1px;
+		-moz-box-shadow: 0px 0px 5px red;
+	 -webkit-box-shadow: 0px 0px 5px red;
+			 box-shadow: 0px 0px 5px red;
+	}
+	.no-boxshadow input:invalid,
+	.no-boxshadow textarea:invalid{ background-color:#F0DDDD;}
+
+
+
+/* =Mods=
+----------------------------------------------- */
+
+	/* =Header Styles= */
+
+
+	/* =Complementary Styles= */
+
+
+	/* =Main Body Styles= */
+
+
+	/* =Footer Styles= */
+
+
+
+
+/* =Media Queries= - for responsive design
+----------------------------------------------- */
+
+	/* =Portrait Styles= */
+	@media all and (orientation:portrait){
+		
+	}
+
+	/* =Landscape Styles= */
+	@media all and (orientation:landscape){
+		
+	}
+
+	/* =Desktop Browsers= */
+	@media only screen and (min-width: 35em) {
+	  
+	}
+
+
+
+/* =Print Styles=
+----------------------------------------------- */
+
+	@media print {
+		* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+		a, a:visited { text-decoration: underline; }
+		a[href]:after { content: " (" attr(href) ")"; }
+		abbr[title]:after { content: " (" attr(title) ")"; }
+		.texthidden a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+		pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+		thead { display: table-header-group; } /* h5bp.com/t */
+		tr, img { page-break-inside: avoid; }
+		img { max-width: 100% !important; }
+		@page { margin: 0.5cm; }
+		p, h2, h3 { orphans: 3; widows: 3; }
+		h2, h3 { page-break-after: avoid; }
+	}

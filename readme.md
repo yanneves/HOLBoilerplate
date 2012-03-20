@@ -10,23 +10,25 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 	-> 	DNS-Prefetch
 	-> 	Title, Description
 	-> 	Viewport Optimised
+	->	Favicons / Shortcut Icons
+	->	ClearType
 -> 	Core CSS
 	-> 	Link to single, minified,
 		concatenated, obfuscated,
 		LESS-preprocessed, versioned,
 		stylesheet
+	-> 	Google Fonts Cache
 -> 	Head JS
 	-> 	Modernizr
 	->	Respond
-	->	Head (loader)
+	->	Require (Core)
 	-> 	Log Handling
 -> 	Body
+	->	IE6 Banner
 	->	Header
+	->	Complementary
 	->	Body
 	->	Footer
-->	Core JS
-	->	Asynchronous Scripts
-	->	Application Index
 ->	Google Analytics
 ```
 
@@ -39,40 +41,82 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 +-- http (volatile)
 +-- http_dev
 |   +-- css
-|   |   +-- less
-|   |   |   --- core.less
-|   |   |   --- style.less
+|   |   --- core.less
 |   |   +-- modules
-|   |   |   --- grids.css
-|   |   |   --- sprites.css
-|   |   |   --- reset.css
+|   |   |	+-- lessoocss
+|   |   |	|	--- grids.css.less
+|   |   |   --- helpers.less
+|   |   |   --- reset.less
+|   |   |   --- sprites.less
+|   |   |   --- normalize.css.less
+|   |   |   --- zocial.css.less
 |   +-- js
-|   |   +-- modules
-|   |   +-- templates
+|   |   +-- app
+|   |   |	+-- libs
+|   |   |	|	+-- require
+|   |   |	|	|	--- order.js
+|   |   |	|	|	--- text.js
+|   |   |	|	+-- underscore
+|   |   |	|	|	--- min-amd.js
+|   |   |	|	+-- backbone
+|   |   |	|	|	--- min-amd.js
+|   |   |	|	|	--- localstorage.js
+|   |   |	|	--- boilerplate.js
+|   |   |	+-- models
+|   |   |	|	--- example.js
+|   |   |	+-- views
+|   |   |	|	+-- tests
+|   |   |	|	|	--- elements.js
+|   |   |	|	|	--- grids.js
+|   |   |	|	|	--- zocials.js
+|   |   |	|	--- example.js
+|   |   |	+-- collections
+|   |   |	|	--- example.js
+|   |   |   --- index.js
+|   |   |   --- router.js
 |   |   --- head.js
 |   |   --- core.js
 |   +-- img
+|   |   +-- apple-touch-icons
+|   |   |	--- apple-touch-icon.png
+|   |   |	--- apple-touch-icon-72x72-precomposed.png
+|   |   |	--- apple-touch-icon-114x114-precomposed.png
+|   |   |	--- apple-touch-icon-144x144-precomposed.png
+|   |   |	--- apple-touch-icon-precomposed.png
 |   +-- fonts
+|   |   --- zocial-regular-webfont.eot
+|   |   --- zocial-regular-webfont.svg
+|   |   --- zocial-regular-webfont.ttf
+|   |   --- zocial-regular-webfont.woff
+|   +-- templates
+|   |   +-- tests
+|   |   |	--- elements.html
+|   |   |	--- grids.html
+|   |   |	--- zocials.html
+|   |   --- example.html
 |   +-- test
+|   |   +-- unit
+|   |   |	--- core.js
+|   |   +-- vendor
+|   |   |	--- jslitmus.js
+|   |   |	--- qunit.js
+|   |   |	--- qunit.css
+|   |   --- index.html
 |   --- .htaccess
 |   --- crossdomain.xml
 |   --- index.html
-|   --- elements.html
-|   --- grids.html
 |   --- 404.html
 |   --- favicon.ico
-|   --- apple-touch-icon.png
-|   --- apple-touch-icon-precomposed.png
-|   --- apple-touch-icon-57x57-precomposed.png
-|   --- apple-touch-icon-72x72-precomposed.png
-|   --- apple-touch-icon-114x114-precomposed.png
 |   --- humans.txt
 |   --- robots.txt
 +-- working
 |   +-- requirements
 |   +-- designs
 |   +-- wireframes
+|   +-- intermediate (volatile)
+|   +-- http_temp (volatile)
 +-- build (ant-build-script)
+|   --- HOLBuild.bat
 --- .gitattributes
 --- .gitignore
 --- readme.md
@@ -86,7 +130,8 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 1. __Preprocess__ `.less` files into `.css`
 2. __Replace__ calls to `.less` files with call to `.css`
 3. __Run__ Ant Build Script
-4. __Deploy__ `http/` for production
+4. __Run__ Require (r.js) Compiler
+5. __Deploy__ `http/` for production
 
 
 ### Preprocessing
@@ -171,10 +216,12 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 
 ### Feature Requests
 
-* boilerplate needs testing
+* swap from Ant to Node Build Script
+* contribute `LESS` and `r.js` compilation to Build Script
 
 ### Releases
 
+* (2012-03-20) v0.3 MVC / AMD architecture implemented for applications development
 * (2012-03-05) v0.2 HOLBuild implemented for customised build process
 * (2012-02-17) v0.1 HOLBoilerplate scraped together following years of experience and perfectionism
 

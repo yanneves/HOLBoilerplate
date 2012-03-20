@@ -5,17 +5,14 @@
   <link rel="stylesheet" href="vendor/qunit.css" type="text/css" media="screen" />
 
   <!-- Vendor deps, non-lib -->
-  <script src="../assets/js/libs/jquery.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script src="vendor/qunit.js"></script>
   <script src="vendor/jslitmus.js"></script>
 
-  <!-- App dependencies, libs -->
-  
-  <script src="../assets/js/libs/underscore.js"></script>
-  <script src="../assets/js/libs/backbone.js"></script>
+  <!-- App dependencies, libs (empty if using AMD) -->
   
   <!-- Include your application load here! -->
-  <script src="../app/index.js"></script>
+  <script data-main="../js/core" src="../js/head.js"></script>
   
   <!-- load test modules -->
   <script src="unit/core.js"></script>

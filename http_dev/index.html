@@ -3,6 +3,8 @@
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Conditional comment for mobile ie7 blogs.msdn.com/b/iemobile/ -->
+<!--[if IEMobile 7 ]>  <html class="no-js iem7" lang="en"> <![endif]-->
 <!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
@@ -16,23 +18,51 @@
 		 More info: h5bp.com/i/378 -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title></title>
+	<title>HOLBoilerplate</title>
 	<meta name="description" content="">
 	<link rel="author" href="/humans.txt" />
 
+	<!-- Mobile viewport optimization h5bp.com/ad -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
 	<!-- Mobile viewport optimized: h5bp.com/viewport -->
 	<meta name="viewport" content="width=device-width">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+	<!-- For iPad 3 with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icons/apple-touch-icon-144x144-precomposed.png">
+	<!-- For iPhone 4 with high-resolution Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icons/apple-touch-icon-114x114-precomposed.png">
+	<!-- For first-generation iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icons/apple-touch-icon-72x72-precomposed.png">
+	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+	<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icons/apple-touch-icon-precomposed.png">
+	<!-- For nokia devices: -->
+	<link rel="shortcut icon" href="/img/apple-touch-icons/apple-touch-icon.png">
+	
+	<!-- iOS web app, delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+	<!-- <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
+	<!-- <script>(function(){var a;if(navigator.platform==="iPad"){a=window.orientation===90||window.orientation===-90?"img/startup-tablet-landscape.png":"img/startup-tablet-portrait.png"}else{a=window.devicePixelRatio===2?"img/startup-retina.png":"img/startup.png"}document.write('<link rel="apple-touch-startup-image" href="'+a+'"/>')})()</script> -->
+
+	<!-- The script prevents links from opening in mobile safari. https://gist.github.com/1042026 -->
+	<!-- <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script> -->
+
+	<!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+	<meta http-equiv="cleartype" content="on">
 
 	<!-- LESS converted to css and minified via build script -->
-  		<link rel="stylesheet/less" href="css/less/core.less">
+  		<link rel="stylesheet/less" href="/css/core.less">
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.1.5/less-1.1.5.min.js"></script>
 	<!-- end LESS -->
-
+	
+	<!-- Load Google Fonts cache -->
+	<link href="http://fonts.googleapis.com/css?family=Pompiere|Passion+One|Boogaloo|Raleway:100" rel="stylesheet" type="text/css">
+	
 	<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
-	<script src="js/head.js"></script>
+	<!-- data-main attribute tells RequireJS to load
+		 js/core.js after RequireJS loads. -->
+	<script data-main="js/core" src="/js/head.js"></script>
 
 </head>
 
@@ -41,26 +71,73 @@
 	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
 		 chromium.org/developers/how-tos/chrome-frame-getting-started -->
 	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-
-
-	<header>
-
-	</header>
-	<div role="main">
 	
-		<pre>Hello Boilerplate!</pre>
 
+	<header id="pageHead">
+		<h1>HOLBoilerplate</h1>
+		<nav>
+			<ul>
+				<li><a href="#!/">Home</a></li>
+				<li><span>Tests</span>
+					<ul>
+						<li><a href="#!/test/elements">Elements</a></li>
+						<li><a href="#!/test/grids">Grids</a></li>
+						<li><a href="#!/test/zocials">Zocials</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<div id="pageComplement" role="complementary">
+		<div id="liveEventContainer" class="line" style="display:none;">
+			<div id="liveEventSport_1" class="liveEventSport_JS">
+				<!-- SOCCER -->
+				<div id="liveEventCategory_31" class="liveEventCategory_JS">
+				<!-- Italy -->
+					<div id="liveEventTournament_33" class="liveEventTournament_JS">
+					<!-- Serie A -->
+						<div id="liveEvent_2372361" class="liveEvent_JS">
+							<div id="liveEventTeam1_224908" class="eventTeam1_JS">
+								<p>AC Siena</p>
+								<div id="liveEventTeam1Score_2372361">2</div>
+							</div>
+							<div id="liveEventTeam2_867590" class="eventTeam2_JS">
+								<p>Calcio Catania</p>
+								<div id="liveEventTeam2Score_2372361">3</div>
+							</div>
+						</div>
+					</div>
+					<div id="liveEventTournament_14267" class="liveEventTournament_JS">
+					<!-- Coppa Italia Lega Pro, Main Round Group C -->
+						<div id="liveEvent_2331106" class="liveEvent_JS">
+							<div id="liveEventTeam1_239126" class="eventTeam1_JS">
+								<p>SC Pisa</p>
+								<div id="liveEventTeam1Score_2331106">4</div>
+							</div>
+							<div id="liveEventTeam2_122259" class="eventTeam2_JS">
+								<p>Lanciano</p>
+								<div id="liveEventTeam2Score_2331106">5</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	<footer>
-
+	<div id="pageBody" class="body" role="main">
+		
+	</div>
+	<footer id="pageFoot">
+		<pre>HOLBoilerplate written by <a href="http://aaunel.com/" title="Aaunel.com">Aaunel</a></pre>
 	</footer>
 
 
 	<!-- JavaScript at the bottom for fast page loading -->
-
-	<!-- scripts concatenated and minified via build script -->
-	<script src="js/core.js"></script>
-	<!-- end scripts -->
+	
+	<!-- JavaScript Core handled by AMD -->
+	
+	<!-- Debugger - remove for production -->
+	<!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->
 
 	<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
 		 mathiasbynens.be/notes/async-analytics-snippet -->
