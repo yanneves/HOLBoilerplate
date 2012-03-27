@@ -79,8 +79,8 @@
 			
 			// libraries
 			jquery:'//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min',
-			underscore:'app/libs/underscore/min-amd', // Underscore AMD optimised version
-			backbone:'app/libs/backbone/min-amd', // Backbone AMD optimised version
+			underscore:'//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.1-amdjs/underscore-amd-min', // Underscore AMD optimised version
+			backbone:'//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.1-amdjs/backbone-amd-min', // Backbone AMD optimised version
 			backbone_localStorage:'app/libs/backbone/localstorage', // Backbone Local Storage plugin
 			
 			// application
