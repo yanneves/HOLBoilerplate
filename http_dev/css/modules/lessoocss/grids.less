@@ -1,0 +1,12 @@
+.rtl {direction:rtl;}
+
+.line{ clear:both;}
+.line, .lastUnit{overflow:hidden;*overflow:visible;*zoom:1;float:none;width:auto;position:relative;_left:-3px;_margin-right:-3px;}
+.rtl .line, .rtl .lastUnit{float:none;_right:-3px;_margin-left:-3px;_margin-right:0; _left:0;}
+
+.unit(@size, @of, @dir: left){
+	@dims: (@size / @of) * 100%;
+	width: @dims;
+	float:@dir;
+	&:last-of-type{ .lastUnit;}
+}

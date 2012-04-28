@@ -1,6 +1,5 @@
 <!doctype html>
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
 <!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!-- Conditional comment for mobile ie7 blogs.msdn.com/b/iemobile/ -->
@@ -20,24 +19,24 @@
 
 	<title>HOLBoilerplate</title>
 	<meta name="description" content="">
-	<link rel="author" href="/humans.txt" />
+	<link rel="author" href="humans.txt" />
 
 	<!-- Mobile viewport optimization h5bp.com/ad -->
 	<meta name="HandheldFriendly" content="True">
 	<meta name="MobileOptimized" content="320">
 	<!-- Mobile viewport optimized: h5bp.com/viewport -->
-	<meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 
 	<!-- For iPad 3 with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icons/apple-touch-icon-144x144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icons/apple-touch-icon-144x144-precomposed.png">
 	<!-- For iPhone 4 with high-resolution Retina display: -->
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icons/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icons/apple-touch-icon-114x114-precomposed.png">
 	<!-- For first-generation iPad: -->
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icons/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icons/apple-touch-icon-72x72-precomposed.png">
 	<!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-	<link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icons/apple-touch-icon-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icons/apple-touch-icon-precomposed.png">
 	<!-- For nokia devices: -->
-	<link rel="shortcut icon" href="/img/apple-touch-icons/apple-touch-icon.png">
+	<link rel="shortcut icon" href="img/apple-touch-icons/apple-touch-icon.png">
 	
 	<!-- iOS web app, delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
 	<!-- <meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,55 +48,67 @@
 
 	<!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
 	<meta http-equiv="cleartype" content="on">
-
+	
 	<!-- LESS converted to css and minified via build script -->
-  		<link rel="stylesheet/less" href="/css/core.less">
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/1.1.5/less-1.1.5.min.js"></script>
+	<link rel="stylesheet/less" href="css/core.less">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.0/less-1.3.0.min.js"></script>
 	<!-- end LESS -->
 	
 	<!-- Load Google Fonts cache -->
-	<link href="http://fonts.googleapis.com/css?family=Pompiere|Passion+One|Boogaloo|Raleway:100" rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Pompiere|Passion+One|Boogaloo|Raleway:100" rel="stylesheet" type="text/css">
 	
 	<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
 	<!-- data-main attribute tells RequireJS to load
 		 js/core.js after RequireJS loads. -->
-	<script data-main="js/core" src="/js/head.js"></script>
+	<!-- scripts concatenated and minified via build script -->
+	<script data-main="js/core" src="js/head.js"></script>
+	<!-- end scripts -->
 
 </head>
 
 <body>
-
+	
 	<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
 		 chromium.org/developers/how-tos/chrome-frame-getting-started -->
 	<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 	
-
+	
+	
+	<!-- Page Head -->
 	<header id="head">
-		
+		<!-- Primary Navigation -->
 		<nav role="navigation">
 			
 		</nav>
 	</header>
-	<div id="complement" role="complementary">
+	<!-- Complementary Elements -->
+	<aside id="complement" role="complementary">
 		
-	</div>
+	</aside>
+	<!-- Page Body -->
 	<article id="body" role="main">
 		<section id="messages">
 			
 		</section>
 		<section id="content">
-			
+			<a href="#" title="Why am I seeing this?" class="loading">Loading Content...</a>
 		</section>
 	</article>
+	<!-- Page Foot -->
 	<footer id="foot">
 		
 	</footer>
-
+	
+	
 
 	<!-- JavaScript at the bottom for fast page loading -->
 	
 	<!-- JavaScript Core handled by AMD -->
+	
+	<!-- Mobile Boilerplate helper functions -->
+	<!-- Now built into the AMD architecture -->
+	<!-- script src="js/app/libs/mbp/boilerplate_mobile.js"></script -->
 	
 	<!-- Debugger - remove for production -->
 	<!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->
@@ -110,6 +121,5 @@
 		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
 		s.parentNode.insertBefore(g,s)}(document,'script'));
 	</script>
-
 </body>
 </html>

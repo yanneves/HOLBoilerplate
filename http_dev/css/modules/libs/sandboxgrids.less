@@ -1,0 +1,28 @@
+#gridsTest{
+	section{ .line;}
+	#fullGrid{
+		div{ .unit(1, 1);}
+	}
+	#splitGrid{
+		div{ .unit(1, 2);}
+	}
+	#triptychGrid{
+		div{ .unit(1, 3);}
+	}
+	#quadrantsGrid{
+		div{ .unit(1, 4);}
+	}
+	#pentaGrid{
+		div{ .unit(1, 5);}
+	}
+	#mixedGrid{
+		.sidebar{ .unit(1, 5);}
+		.content{ .unit(1, 3);}
+		.filler{ .lastUnit;}
+	}
+	#centerFillGrid{
+		.sidebar{ .unit(1, 5);}
+		.spotlights{ .unit(1, 3, right);}
+		.filler{ .lastUnit;}
+	}
+}

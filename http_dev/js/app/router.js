@@ -9,50 +9,41 @@ define([
 	'backbone',		// BackboneJS MVC
 	// Views
 	'app/views/home/main',
-	'app/views/tests/grids',
-	'app/views/tests/elements',
-	'app/views/tests/zocials'
-], function($, _, Backbone, mainView, gridsView, elementsView, zocialsView){
+	'app/views/sandbox/main'
+], function($, _, Backbone, mainView, sandboxView){
 	var AppRouter = Backbone.Router.extend({
-		routes: {
+		routes:{
 			// Define some URL routes
+			'': 'showHome',
+			'!/': 'showHome',
+			
+			// Sandbox
+			'!/sandbox/*name': 'sandboxAction',
 			
 			// Default
 			'*actions': 'defaultAction'
 		},
-		defaultAction: function(actions){
-			// We have no matching route, lets display the home page
-			var reroute = mainView;
-			
-			// log parameters for development
-			if(typeof ENV != 'undefined' && ENV.development === true){
-				// log route
-				log("dev: Rerouting to: " + actions);
+		showHome:function(){
+			// root route
+			this.navigate('!/');
+			// render home page
+			mainView.render();
+		},
+		sandboxAction:function(name){
+			// Sandbox only available in test mode
+			if( log("Sandbox mode!", 'test') ){
+				sandboxView.render(name);
+			} else {
+				this.defaultAction();
 			}
+		},
+		defaultAction:function(actions){
+			// log route
+			log("Route (" + actions + ") not defined! Rerouting to home.", 'dev');
 			
-			// add routes for testing
-			if(typeof ENV != 'undefined' && ENV.testing === true){
-				switch(actions){
-					// render oocss responsive grids
-					case "!/test/grids" : {
-						reroute = gridsView;
-						break;
-					}
-					// render elements index
-					case "!/test/elements" : {
-						reroute = elementsView;
-						break;
-					}
-					// render zocials buttons
-					case "!/test/zocials" : {
-						reroute = zocialsView;
-						break;
-					}
-				}
-			}
-			
-			// render reroute
-			reroute.render();
+			// We have no matching route, let's display the home page
+			this.navigate('!/404');
+			this.showHome();
 		}
 	});
 	
@@ -61,6 +52,6 @@ define([
 		Backbone.history.start();
 	};
 	return {
-		init: init
+		initialize: init
 	};
 });

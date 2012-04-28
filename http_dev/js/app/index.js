@@ -15,16 +15,13 @@ define([
 	
 	var init = function(){
 		// Pass in our Router module and call its initialize function
-		Router.init();
+		Router.initialize();
 	}
 	
-	// log parameters for development
-	if(typeof ENV != 'undefined' && ENV.development === true){
-		// log once everything is ready
-		log("dev: Everything else is ready!");
-	}
+	// log once everything is ready
+	log("Everything else is ready!", 'dev');
 
 	return {
-		init: init
+		initialize: init
 	};
 });

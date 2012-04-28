@@ -1,6 +1,6 @@
 /*
  * <Core>
- * Author: 
+ * Author:
  */
 
 /* =Table of Contents=
@@ -25,10 +25,10 @@
   |		=Complementary Styles=
   |		=Main Body Styles=
   |		=Footer Styles=
+  |		=Sandbox Styles=
 10|	=Media Queries=
   |		=Portrait Styles=
   |		=Landscape Styles=
-  |		=Desktop Browsers=
 11|	=Print Styles=
 
 */
@@ -37,7 +37,7 @@
 -----------------------------------------------
 
 	=Sizing=
-	sizing in 'em': 1'em' = 16'px'
+	sizing in 'em':1'em' = 16'px'
 
 	=Helper Classes=
 	.texthidden		for image replacement
@@ -50,6 +50,19 @@
 
 */
 
+	.loading{
+		display:block;
+		width:24px;
+		height:24px;
+		margin:30px auto;
+		background-image:url('../img/loadinfo.net-24x24.gif');
+		background-position:0 0;
+		background-repeat:no-repeat;
+		.texthidden;
+	}
+
+
+
 /* =Imports=
 ----------------------------------------------- */
 
@@ -58,11 +71,11 @@
 	@import "modules/zocial.css.less";
 	
 	/* =LESSooCSS= */
-	@import "modules/lessoocss/grids.css.less";
+	@import "modules/lessoocss/grids.less";
 	
 	/* =LESS Modules= */
 	@import "modules/helpers";
-	@import "modules/sprites";
+	@import "sprites";
 
 
 
@@ -70,26 +83,39 @@
 ----------------------------------------------- */
 
 	/* =Colour Scheme= */
-	@bg: #FFF;
-	@fg: #FFF;
-	@textColor: #444;
-	@highlight: #FF5E99;
-	@line: #666;
-
+	@bg:#ccc;
+	@fg:#fff;
+	@textColor:#444;
+	@linkColor:#888;
+	@highlight:#fe57a1;
+	@shadow:#444;
+	@line:#888;
+	@brdr: #ccc;
+	
+	/* =Page Dimensions= */
+	@grid:960px;
 
 
 /* =Layout=
 ----------------------------------------------- */
 
-	html{ overflow-y:scroll;}
-	body{ background-color:@bg; .optimizeLegibility}
-	.container{ max-width:960px; margin:0 auto 30px; background-color:@fg;}
-	header{ }
-	.body{ color:@textColor;}
-	.hairline{ border-bottom:1px solid @line;}
-	footer{ }
+	html{ overflow-y:scroll; background-color:@bg;}
+	body{ color:@textColor; font-size:1rem; .optimizeLegibility;}
+	#head{
+		nav{ .line;}
+	}
+	#complement{ }
+	#body{
+		min-height:16em;
+		background-color:@fg;
+		
+		#messages{ .line;}
+		#content{ .line; .wrapIn();}
+	}
+	#foot{ overflow-y:hidden; color:@fg; background-color:@shadow;}
 	
-	.chromeframe{ margin:0.2em 0; background:#CCC; color:black; padding:0.2em 0;}
+	/* =IE6 Warning= */
+	.chromeframe{ margin:0.2em 0; background:#ccc; color:black; padding:0.2em 0;}
 
 
 
@@ -103,21 +129,25 @@
 	h5, .h5{ }
 	h6, .h6{ }
 
-	p{ }
+	p, .p{ }
 
-	.body ul{ }
-	.body ul li{ }
+	nav ul{ overflow:hidden; margin:0; padding:0;
+		li{ text-align:center;}
+	}
+	
+	article ul, article ol{
+		li{ }
+	}
 
-	.body ol{ }
-	.body ol li{ }
+	pre, code, .code{ white-space:pre-wrap;}
 
-	small{ }
+	small, .small{ }
 
-	strong{ }
-	em{ }
+	strong, .strong{ }
+	em, .emphasis{ }
 
-	blockquote{ }
-	cite{ }
+	blockquote, .quote{ }
+	cite, .cite{ }
 
 	::-moz-selection{ background:@highlight; color:@bg; text-shadow:none;}
 	::selection{ background:@highlight; color:@bg; text-shadow:none;}
@@ -127,27 +157,27 @@
 /* =Links=
 ----------------------------------------------- */
 
-	a:link, a:visited{ text-decoration:none; -webkit-tap-highlight-color:#FF5E99;}
-	a:hover, a:focus{ text-decoration:underline;}
+	a{
+		color:@linkColor;
+		&:link{ text-decoration:none; -webkit-tap-highlight-color:#ff5e99;}
+		&:visited{ text-decoration:none; -webkit-tap-highlight-color:#ff5e99;}
+		&:focus{ outline:thin dotted;}
+	}
+	
+	nav a{ display:block;}
 
 
 
 /* =Forms=
 ----------------------------------------------- */
 
-	label{ padding:15px 10px 15px 5px; font-size:1.2em;}
+	label{ }
 	input{ }
+	textarea{ }
 	select{ }
 	button{ }
 	input:valid, textarea:valid{ }
-	input:invalid, textarea:invalid {
-		  border-radius: 1px;
-		-moz-box-shadow: 0px 0px 5px red;
-	 -webkit-box-shadow: 0px 0px 5px red;
-			 box-shadow: 0px 0px 5px red;
-	}
-	.no-boxshadow input:invalid,
-	.no-boxshadow textarea:invalid{ background-color:#F0DDDD;}
+	input:invalid, textarea:invalid{ }
 
 
 
@@ -155,16 +185,31 @@
 ----------------------------------------------- */
 
 	/* =Header Styles= */
+	#head{
+		
+		/* Primary Navigation */
+		nav{ }
+	}
 
 
 	/* =Complementary Styles= */
+	#complement{ }
 
 
 	/* =Main Body Styles= */
+	/* Page Messages */
+	#messages{ }
+	/* Page Content */
+	#content{ }
 
 
 	/* =Footer Styles= */
-
+	#foot{ }
+	
+	
+	/* =Sandbox Styles= */
+	@import "modules/libs/todoapp";
+	@import "modules/libs/sandboxgrids";
 
 
 
@@ -181,27 +226,22 @@
 		
 	}
 
-	/* =Desktop Browsers= */
-	@media only screen and (min-width: 35em) {
-	  
-	}
-
 
 
 /* =Print Styles=
 ----------------------------------------------- */
 
 	@media print {
-		* { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-		a, a:visited { text-decoration: underline; }
-		a[href]:after { content: " (" attr(href) ")"; }
-		abbr[title]:after { content: " (" attr(title) ")"; }
-		.texthidden a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-		pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-		thead { display: table-header-group; } /* h5bp.com/t */
-		tr, img { page-break-inside: avoid; }
-		img { max-width: 100% !important; }
-		@page { margin: 0.5cm; }
-		p, h2, h3 { orphans: 3; widows: 3; }
-		h2, h3 { page-break-after: avoid; }
+		* { background:transparent !important; color:black !important; box-shadow:none !important; text-shadow:none !important; filter:none !important; -ms-filter:none !important; } /* Black prints faster:h5bp.com/s */
+		a, a:visited { text-decoration:underline; }
+		a[href]:after { content:" (" attr(href) ")"; }
+		abbr[title]:after { content:" (" attr(title) ")"; }
+		.texthidden a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content:""; }  /* Don't show links for images, or javascript/internal links */
+		pre, blockquote { border:1px solid #999; page-break-inside:avoid; }
+		thead { display:table-header-group; } /* h5bp.com/t */
+		tr, img { page-break-inside:avoid; }
+		img { max-width:100% !important; }
+		@page { margin:0.5cm; }
+		p, h2, h3 { orphans:3; widows:3; }
+		h2, h3 { page-break-after:avoid; }
 	}

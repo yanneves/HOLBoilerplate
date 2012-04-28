@@ -1,5 +1,5 @@
 /*
- * <Boilerplate>
+ * <Boilerplate for New Modules>
  * Author: 
  */
  

@@ -34,20 +34,20 @@
 
 	// =Modernizr=
 	// feature detection and polyfiller
-	var feature = Modernizr;
+	var feature = Modernizr || {};
 	
 	// =RespondJS=
 	// polyfiller for responsive design
-	var respond = respond;
+	var respond = respond || {};
+	
+	// =(dot)Log=
+	// lightweight wrapper for 'log'
+	// usage: log('inside coolFunc', this, arguments);
+	var log = log || function(args){};
 	
 	// =RequireJS=
 	// AMD script loader
 	var AMD = require;
-	
-	// =(dot)Log=
-	// lightweight wrapper for 'console.log'
-	// usage: log('inside coolFunc', this, arguments);
-	var log = log;
 
 
 	
@@ -56,12 +56,51 @@
 
 	var ENV = {
 		// development environment?
-		development:false,
+		development:true,
 		// testing environment?
 		testing:true,
 		// production environment?
-		production:false
-	};
+		production:false,
+		
+		// environment logging
+		console: {
+			log: log
+		},
+		log: function(msg, env){
+			// set scope
+			var base = ENV;
+				output = true;
+			
+			if(env){
+				// handle aliases
+				switch(env){
+					// shorthand
+					case 'dev': { env = 'development'; break;}
+					case 'test': { env = 'testing'; break;}
+					case 'prod': { env = 'production'; break;}
+				}
+				// interpret and log for environment
+				if(base[env] === true){
+					base.console.log(env.toUpperCase() + ": " + msg);
+				} else {
+					output = false;
+				}
+			} else { base.console.log(msg);}
+			
+			return output;
+		},
+		
+		// initiate environments
+		init: function(){
+			// overwrite existing 'log' functionality
+			log = this.log;
+			
+			// log environments
+			log("Development Environment active", 'development');
+			log("Testing Environment active", 'testing');
+			log("Production Environment active", 'production');
+		}
+	}; ENV.init();
 
 
 
@@ -82,12 +121,14 @@
 			underscore:'//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.3.1-amdjs/underscore-amd-min', // Underscore AMD optimised version
 			backbone:'//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.1-amdjs/backbone-amd-min', // Backbone AMD optimised version
 			backbone_localStorage:'app/libs/backbone/localstorage', // Backbone Local Storage plugin
+			mobileboilerplate:'app/libs/mbp/boilerplate_mobile', // Mobile Boilerplate JavaScript helper functions
 			
 			// application
 			boilerplate:'app/libs/boilerplate',
 			index:'app/index',
 			router:'app/router',
-			templates:'../templates'
+			templates:'../templates',
+			libs:'app/libs'
 		}
 	});
 
@@ -99,132 +140,51 @@
 	// =SAS=
 	// stand-alone script
 	SAS = {
-		init:function(){
+		domManipulation:function($, dom){
+			// jQuery behaviourisms
+			$(document).ready(function(){
+				dom.init();
+			});
+		},
+		mobileHelpers:function($, mbp){
+			// Mobile Boilerplate helpers
+			$(document).ready(function(){
+				mbp.init();
+			});
+		},
+		init:function($){
 			// set scope
 			var base = SAS;
 			
-			// environment-related actions
-			if(typeof ENV !== 'undefined'){
-				// log parameters for development
-				if(ENV.development === true){
-					// log notice of environment
-					log("dev: Development Environment active");
-					
-					// log once jQuery is ready
-					log("dev: jQuery is ready!");
-				}
-				
-				// log parameters for testing
-				if(ENV.testing === true){
-					// log notice of environment
-					log("test: Testing Environment active");
-					
-					// identify media query support
-					log("test: Are media queries supported? " + ((respond.mediaQueriesSupported) ? "Yes" : "No"));
-				}
+			// log once jQuery is ready
+			log("jQuery is ready!", 'dev');
+			
+			if(typeof respond != 'undefined'){
+				// identify media query support
+				log("Are media queries supported? " + ((respond.mediaQueriesSupported) ? "Yes" : "No"), 'test');
 			}
 			
 			// check for opacity, otherwise load 'belatedpng'
-			if(feature.opacity === false){
+			/*if(feature.opacity === false){
 				AMD(['belatedpng'], function(){
-					DD_belatedPNG.fix('img, .png_bg');
+					DD_belatedPNG.fix('img');
 				});
-			}
+			}*/
 		}
 	};
 
 	// =APP=
 	// application executables
 	APP = {
-		models:{
-			identify:function(){
-				// identify Person model
-				this.Person = Backbone.Model.extend({
-					defaults:{
-						firstName: "",
-						lastName: "",
-						age: 0,
-						dev: "None"
-					},
-					validate:function(attr){
-						var result = "";
-						if(attr.age < 0 || attr.age > 110){
-							result += "Invalid age entered (" + attr.age + ") -- must be between 0 and 110. \n\n";
-						}
-						
-						return result;
-					},
-					initialize: function(){
-						if(typeof ENV !== 'undefined' && ENV.development === true){
-							// log once model identified
-							log("dev: Person model identified!");
-						}
-						this.bind('error', function(model, error){
-							alert(error);
-						});
-					}
-				});
-				
-				// identify Group collection
-				this.Group = Backbone.Collection.extend({
-					model: this.Person
-				});
-			},
-			define:function(){
-				// define person
-				this.person1 = new this.Person({
-					firstName: "Yann",
-					lastName: "Eves-Hollis",
-					age: 20,
-					dev: "JavaScript"
-				});
-				this.person2 = new this.Person({
-					firstName: "Lance",
-					lastName: "Kesson",
-					dev: "PHP"
-				});
-				this.person3 = new this.Person({
-					firstName: "Ludovic",
-					dev: "PHP"
-				});
-				this.person4 = new this.Person({
-					firstName: "Rajeev",
-					dev: "Tester"
-				});
-				this.person5 = new this.Person({
-					firstName: "Ross",
-					lastName: "Hunter",
-					dev: "Lead"
-				});
-				
-				this.marAcq = new this.Group([this.person1, this.person2, this.person3, this.person4, this.person5]);
-				
-				for(var i=0; i<this.marAcq.models.length; i++){
-					var attr = this.marAcq.models[i].attributes;
-						name = attr.firstName + " " + attr.lastName;
-					log("Marcom Acquisition: " + name);
-				}
-			},
-			init:function(){
-				// identify models
-				this.identify();
-				
-				// define models
-				this.define();
-			}
-		},
 		init:function(app){
 			// set scope
 			var base = APP;
 			
-			// log parameters for development
-			if(typeof ENV != 'undefined' && ENV.development === true){
-				// log once everything is ready
-				log("dev: Firing application!");
-			}
+			// log once everything is ready
+			log("Firing application!", 'dev');
 			
 			// initiate application
-			app.init();
+			app.initialize();
 		}
 	};
 
@@ -233,11 +193,19 @@
 /* =Initiation=
 ----------------------------------------------- */
 
-	AMD(['jquery'], SAS.init);
+	AMD(['jquery'], function($){
+		SAS.init($);
+	});
+	
+	AMD(['jquery', 'dom'], function($, dom){
+		SAS.domManipulation($, dom);
+	});
+	
+	AMD(['jquery', 'mbp'], function($, mbp){
+		SAS.mobileHelpers($, mbp);
+	});
 
 	AMD(['index'], function(index){
 		APP.init(index);
 	});
-
-
 

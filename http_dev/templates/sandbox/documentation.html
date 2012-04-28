@@ -1,0 +1,254 @@
+
+<h1>HOLBoilerplate</h1>
+
+<p><strong>H5BP-OOCSS-LESS-BBBP Boilerplate</strong></p>
+
+<h2>Runtime Structure</h2>
+
+<p><code>
+-&gt;     Meta Headers
+    -&gt;  Chromeframe
+    -&gt;  DNS-Prefetch
+    -&gt;  Title, Description
+    -&gt;  Viewport Optimised
+    -&gt;  Favicons / Shortcut Icons
+    -&gt;  ClearType
+-&gt;     Core CSS
+    -&gt;  Link to single, minified,
+        concatenated, obfuscated,
+        LESS-preprocessed, versioned,
+        stylesheet
+    -&gt;  Google Fonts Cache
+-&gt;     Head JS
+    -&gt;  Modernizr
+    -&gt;  Respond
+    -&gt;  Require (Core)
+    -&gt;  Log Handling
+-&gt;     Body
+    -&gt;  IE6 Banner
+    -&gt;  Header
+    -&gt;  Complementary
+    -&gt;  Body
+    -&gt;  Footer
+-&gt;    Google Analytics
+</code></p>
+
+<h2>Documentation</h2>
+
+<h3>File Structure</h3>
+
+<p><code>
+.
++-- http (volatile)
++-- http_dev
+|   +-- css
+|   |   --- core.less
+|   |   +-- modules
+|   |   |    +-- lessoocss
+|   |   |    |   --- grids.css.less
+|   |   |   --- helpers.less
+|   |   |   --- reset.less
+|   |   |   --- sprites.less
+|   |   |   --- normalize.css.less
+|   |   |   --- zocial.css.less
+|   +-- js
+|   |   +-- app
+|   |   |    +-- libs
+|   |   |    |   +-- require
+|   |   |    |   |   --- order.js
+|   |   |    |   |   --- text.js
+|   |   |    |   +-- underscore
+|   |   |    |   |   --- min-amd.js
+|   |   |    |   +-- backbone
+|   |   |    |   |   --- min-amd.js
+|   |   |    |   |   --- localstorage.js
+|   |   |    |   --- boilerplate.js
+|   |   |    +-- models
+|   |   |    |   --- example.js
+|   |   |    +-- views
+|   |   |    |   +-- tests
+|   |   |    |   |   --- elements.js
+|   |   |    |   |   --- grids.js
+|   |   |    |   |   --- zocials.js
+|   |   |    |   --- example.js
+|   |   |    +-- collections
+|   |   |    |   --- example.js
+|   |   |   --- index.js
+|   |   |   --- router.js
+|   |   --- head.js
+|   |   --- core.js
+|   +-- img
+|   |   +-- apple-touch-icons
+|   |   |    --- apple-touch-icon.png
+|   |   |    --- apple-touch-icon-72x72-precomposed.png
+|   |   |    --- apple-touch-icon-114x114-precomposed.png
+|   |   |    --- apple-touch-icon-144x144-precomposed.png
+|   |   |    --- apple-touch-icon-precomposed.png
+|   +-- fonts
+|   |   --- zocial-regular-webfont.eot
+|   |   --- zocial-regular-webfont.svg
+|   |   --- zocial-regular-webfont.ttf
+|   |   --- zocial-regular-webfont.woff
+|   +-- templates
+|   |   +-- tests
+|   |   |    --- elements.html
+|   |   |    --- grids.html
+|   |   |    --- zocials.html
+|   |   --- example.html
+|   +-- test
+|   |   +-- unit
+|   |   |    --- core.js
+|   |   +-- vendor
+|   |   |    --- jslitmus.js
+|   |   |    --- qunit.js
+|   |   |    --- qunit.css
+|   |   --- index.html
+|   --- .htaccess
+|   --- crossdomain.xml
+|   --- index.html
+|   --- 404.html
+|   --- favicon.ico
+|   --- humans.txt
+|   --- robots.txt
++-- working
+|   +-- requirements
+|   +-- designs
+|   +-- wireframes
+|   +-- intermediate (volatile)
+|   +-- http_temp (volatile)
++-- build (ant-build-script)
+|   --- HOLBuild.bat
+--- .gitattributes
+--- .gitignore
+--- readme.md
+</code></p>
+
+<h3>Build Steps:</h3>
+
+<blockquote>
+  <p><code>build/HOLBuild.bat</code> now handles this!</p>
+</blockquote>
+
+<ol>
+<li><strong>Preprocess</strong> <code>.less</code> files into <code>.css</code></li>
+<li><strong>Replace</strong> calls to <code>.less</code> files with call to <code>.css</code></li>
+<li><strong>Run</strong> Ant Build Script</li>
+<li><strong>Run</strong> Require (r.js) Compiler</li>
+<li><strong>Deploy</strong> <code>http/</code> for production</li>
+</ol>
+
+<h3>Preprocessing</h3>
+
+<h4>Ant Build Script</h4>
+
+<blockquote>
+  <p>"Optimizes your code for production" <br />
+  Reduces application weight for deployment to production. <br />
+  Branch: <code>build/</code> <br />
+  Github: <code>git://github.com/h5bp/ant-build-script.git</code>  </p>
+</blockquote>
+
+<h4>LESS</h4>
+
+<blockquote>
+  <p>"The dynamic stylesheet language" <br />
+  Tool for coding scalable cascading stylesheets. <br />
+  Github: <code>git://github.com/cloudhead/less.js.git</code>  </p>
+</blockquote>
+
+<h3>CSS</h3>
+
+<h4>Reset</h4>
+
+<blockquote>
+  <p>HTML5 Boilerplate stylesheet for normalization. <br />
+  Namespace: <em>All</em> elements, helpers  </p>
+</blockquote>
+
+<h4>Grids</h4>
+
+<blockquote>
+  <p>OOCSS elastic grid layout <br />
+  Namespace: <code>.line</code>, <code>.unit</code>  </p>
+</blockquote>
+
+<h4>Sprites</h4>
+
+<blockquote>
+  <p>Blank library for sprite management <br />
+  Namespace: none  </p>
+</blockquote>
+
+<h3>JavaScript</h3>
+
+<h4>jQuery</h4>
+
+<blockquote>
+  <p>"New Wave JavaScript" <br />
+  Standard library for DOM interaction. <br />
+  Dependencies: none <br />
+  Github: <code>git://github.com/jquery/jquery.git</code>  </p>
+</blockquote>
+
+<h4>Modernizr</h4>
+
+<blockquote>
+  <p>"Front-end development done right" <br />
+  For feature detection and polyfilling. <br />
+  Dependencies: none <br />
+  Github: <code>git://github.com/Modernizr/Modernizr.git</code>  </p>
+</blockquote>
+
+<h4>Respond</h4>
+
+<blockquote>
+  <p>"A fast &amp; lightweight polyfill for min/max-width CSS3 Media Queries" <br />
+  CSS3 Media Queries polyfill. <br />
+  Dependencies: none <br />
+  Github: <code>git://github.com/scottjehl/Respond.git</code>  </p>
+</blockquote>
+
+<h4>Head</h4>
+
+<blockquote>
+  <p>"The only script in your \<HEAD\>" <br />
+  Used as a modular asynchronous script loader. <br />
+  Dependencies: none <br />
+  Github: <code>git://github.com/headjs/headjs.git</code>  </p>
+</blockquote>
+
+<h4>Underscore</h4>
+
+<blockquote>
+  <p>"Utility-belt library" <br />
+  Extended library for common functions. <br />
+  Github: <code>git://github.com/documentcloud/underscore.git</code>  </p>
+</blockquote>
+
+<h4>Backbone</h4>
+
+<blockquote>
+  <p>"MV* library" <br />
+  Templating library. <br />
+  Dependencies: <code>jQuery.js, Underscore.js</code> <br />
+  Github: <code>git://github.com/documentcloud/backbone.git</code>  </p>
+</blockquote>
+
+<h2>Goals &amp; Milestones</h2>
+
+<h3>Feature Requests</h3>
+
+<ul>
+<li>swap from Ant to Node Build Script</li>
+<li>contribute <code>LESS</code> and <code>r.js</code> compilation to Build Script</li>
+</ul>
+
+<h3>Releases</h3>
+
+<ul>
+<li>(2012-03-20) v0.3 MVC / AMD architecture implemented for applications development</li>
+<li>(2012-03-05) v0.2 HOLBuild implemented for customised build process</li>
+<li>(2012-02-17) v0.1 HOLBoilerplate scraped together following years of experience and perfectionism</li>
+</ul>
+
+<p>: )</p>

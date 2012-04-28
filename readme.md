@@ -21,8 +21,8 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 -> 	Head JS
 	-> 	Modernizr
 	->	Respond
-	->	Require (Core)
 	-> 	Log Handling
+	->	Require (Core)
 -> 	Body
 	->	IE6 Banner
 	->	Header
@@ -152,14 +152,14 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 
 ### CSS
 
-#### Reset
+#### Normalize
 
 > HTML5 Boilerplate stylesheet for normalization.  
 > Namespace: _All_ elements, helpers  
 
-#### Grids
+#### LESSooCSS
 
-> OOCSS elastic grid layout  
+> LESSooCSS elastic grid layout  
 > Namespace: `.line`, `.unit`  
 
 #### Sprites
@@ -191,9 +191,9 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 > Dependencies: none  
 > Github: `git://github.com/scottjehl/Respond.git`  
 
-#### Head
+#### Require
 
-> "The only script in your \<HEAD\>"  
+> "JavaScript file and module loader"  
 > Used as a modular asynchronous script loader.  
 > Dependencies: none  
 > Github: `git://github.com/headjs/headjs.git`  
@@ -221,6 +221,7 @@ __H5BP-OOCSS-LESS-BBBP Boilerplate__
 
 ### Releases
 
+* (2012-04-28) v0.4 Grandiose overhaul implementing more best practices and _sandbox mode_
 * (2012-03-20) v0.3 MVC / AMD architecture implemented for applications development
 * (2012-03-05) v0.2 HOLBuild implemented for customised build process
 * (2012-02-17) v0.1 HOLBoilerplate scraped together following years of experience and perfectionism
