@@ -50,198 +50,199 @@
 
 */
 
-	.loading{
-		display:block;
-		width:24px;
-		height:24px;
-		margin:30px auto;
-		background-image:url('../img/loadinfo.net-24x24.gif');
-		background-position:0 0;
-		background-repeat:no-repeat;
-		.texthidden;
-	}
-
 
 
 /* =Imports=
 ----------------------------------------------- */
 
-	/* =CSS Modules= */
-	@import "modules/normalize.css.less";
-	@import "modules/zocial.css.less";
-	
-	/* =LESSooCSS= */
-	@import "modules/lessoocss/grids.less";
-	
-	/* =LESS Modules= */
-	@import "modules/helpers";
-	@import "sprites";
+/* =CSS Modules= */
+@import "modules/normalize.css.less";
+@import "modules/zocial.css.less";
+
+/* =LESSooCSS= */
+@import "modules/lessoocss/grids.less";
+
+/* =LESS Modules= */
+@import "modules/helpers.less";
+@import "sprites.less";
 
 
 
 /* =Variables=
 ----------------------------------------------- */
 
-	/* =Colour Scheme= */
-	@bg:#ccc;
-	@fg:#fff;
-	@textColor:#444;
-	@linkColor:#888;
-	@highlight:#fe57a1;
-	@shadow:#444;
-	@line:#888;
-	@brdr: #ccc;
-	
-	/* =Page Dimensions= */
-	@grid:960px;
+/* =Colour Scheme= */
+@bg:#ccc;
+@fg:#fff;
+@textColor:#444;
+@linkColor:#888;
+@highlight:#fe57a1;
+@shadow:#444;
+@line:#888;
+@brdr: #ccc;
+
+/* =Page Dimensions= */
+@grid:960px;
 
 
 /* =Layout=
 ----------------------------------------------- */
 
-	html{ overflow-y:scroll; background-color:@bg;}
-	body{ color:@textColor; font-size:1rem; .optimizeLegibility;}
-	#head{
-		nav{ .line;}
-	}
-	#complement{ }
-	#body{
-		min-height:16em;
-		background-color:@fg;
-		
-		#messages{ .line;}
-		#content{ .line; .wrapIn();}
-	}
-	#foot{ overflow-y:hidden; color:@fg; background-color:@shadow;}
+html{ overflow-y:scroll; background-color:@bg;}
+body{ color:@textColor; font-size:1rem; .optimizeLegibility;}
+#head{
+	nav{ .line;}
+}
+#complement{ }
+#body{
+	min-height:16em;
+	background-color:@fg;
 	
-	/* =IE6 Warning= */
-	.chromeframe{ margin:0.2em 0; background:#ccc; color:black; padding:0.2em 0;}
+	#messages{ .line;}
+	#content{ .line; .wrapIn();}
+}
+#foot{ overflow-y:hidden; color:@fg; background-color:@shadow;}
+
+/* =Loading Icon= */
+.loading{
+	display:block;
+	width:24px;
+	height:24px;
+	margin:30px auto;
+	background-image:url('../img/loadinfo.net-24x24.gif');
+	background-position:0 0;
+	background-repeat:no-repeat;
+	.texthidden;
+}
+
+/* =IE6 Warning= */
+.chromeframe{ margin:0.2em 0; background:#ccc; color:black; padding:0.2em 0;}
 
 
 
 /* =Typography=
 ----------------------------------------------- */
 
-	h1, .h1{ }
-	h2, .h2{ }
-	h3, .h3{ }
-	h4, .h4{ }
-	h5, .h5{ }
-	h6, .h6{ }
+h1, .h1{ }
+h2, .h2{ }
+h3, .h3{ }
+h4, .h4{ }
+h5, .h5{ }
+h6, .h6{ }
 
-	p, .p{ }
+p, .p{ }
 
-	nav ul{ overflow:hidden; margin:0; padding:0;
-		li{ text-align:center;}
-	}
-	
-	article ul, article ol{
-		li{ }
-	}
+nav ul{ overflow:hidden; margin:0; padding:0;
+	li{ text-align:center;}
+}
 
-	pre, code, .code{ white-space:pre-wrap;}
+article ul, article ol{
+	li{ }
+}
 
-	small, .small{ }
+pre, code, .code{ white-space:pre-wrap;}
 
-	strong, .strong{ }
-	em, .emphasis{ }
+small, .small{ }
 
-	blockquote, .quote{ }
-	cite, .cite{ }
+strong, .strong{ }
+em, .emphasis{ }
 
-	::-moz-selection{ background:@highlight; color:@bg; text-shadow:none;}
-	::selection{ background:@highlight; color:@bg; text-shadow:none;}
+blockquote, .quote{ }
+cite, .cite{ }
+
+::-moz-selection{ background:@highlight; color:@bg; text-shadow:none;}
+::selection{ background:@highlight; color:@bg; text-shadow:none;}
 
 
 
 /* =Links=
 ----------------------------------------------- */
 
-	a{
-		color:@linkColor;
-		&:link{ text-decoration:none; -webkit-tap-highlight-color:#ff5e99;}
-		&:visited{ text-decoration:none; -webkit-tap-highlight-color:#ff5e99;}
-		&:focus{ outline:thin dotted;}
-	}
-	
-	nav a{ display:block;}
+a{
+	color:@linkColor;
+	&:link{ text-decoration:none; -webkit-tap-highlight-color:#ff5e99;}
+	&:visited{ text-decoration:none; -webkit-tap-highlight-color:#ff5e99;}
+	&:focus{ outline:thin dotted;}
+}
+
+nav a{ display:block;}
 
 
 
 /* =Forms=
 ----------------------------------------------- */
 
-	label{ }
-	input{ }
-	textarea{ }
-	select{ }
-	button{ }
-	input:valid, textarea:valid{ }
-	input:invalid, textarea:invalid{ }
+label{ }
+input{ }
+textarea{ }
+select{ }
+button{ }
+input:valid, textarea:valid{ }
+input:invalid, textarea:invalid{ }
 
 
 
 /* =Mods=
 ----------------------------------------------- */
 
-	/* =Header Styles= */
-	#head{
-		
-		/* Primary Navigation */
-		nav{ }
-	}
-
-
-	/* =Complementary Styles= */
-	#complement{ }
-
-
-	/* =Main Body Styles= */
-	/* Page Messages */
-	#messages{ }
-	/* Page Content */
-	#content{ }
-
-
-	/* =Footer Styles= */
-	#foot{ }
+/* =Header Styles= */
+#head{
 	
-	
-	/* =Sandbox Styles= */
-	@import "modules/libs/todoapp";
-	@import "modules/libs/sandboxgrids";
+	/* Primary Navigation */
+	nav{ }
+}
+
+
+/* =Complementary Styles= */
+#complement{ }
+
+
+/* =Main Body Styles= */
+/* Page Messages */
+#messages{ }
+/* Page Content */
+#content{ }
+
+
+/* =Footer Styles= */
+#foot{ }
+
+
+/* =Sandbox Styles= */
+@import "modules/libs/todoapp.less";
+@import "modules/libs/sandboxgrids.less";
 
 
 
 /* =Media Queries= - for responsive design
 ----------------------------------------------- */
 
-	/* =Portrait Styles= */
-	@media all and (orientation:portrait){
-		
-	}
+/* =Portrait Styles= */
+@media all and (orientation:portrait){
+	
+}
 
-	/* =Landscape Styles= */
-	@media all and (orientation:landscape){
-		
-	}
+/* =Landscape Styles= */
+@media all and (orientation:landscape){
+	
+}
 
 
 
 /* =Print Styles=
 ----------------------------------------------- */
 
-	@media print {
-		* { background:transparent !important; color:black !important; box-shadow:none !important; text-shadow:none !important; filter:none !important; -ms-filter:none !important; } /* Black prints faster:h5bp.com/s */
-		a, a:visited { text-decoration:underline; }
-		a[href]:after { content:" (" attr(href) ")"; }
-		abbr[title]:after { content:" (" attr(title) ")"; }
-		.texthidden a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content:""; }  /* Don't show links for images, or javascript/internal links */
-		pre, blockquote { border:1px solid #999; page-break-inside:avoid; }
-		thead { display:table-header-group; } /* h5bp.com/t */
-		tr, img { page-break-inside:avoid; }
-		img { max-width:100% !important; }
-		@page { margin:0.5cm; }
-		p, h2, h3 { orphans:3; widows:3; }
-		h2, h3 { page-break-after:avoid; }
-	}
+@media print {
+	* { background:transparent !important; color:black !important; box-shadow:none !important; text-shadow:none !important; filter:none !important; -ms-filter:none !important; } /* Black prints faster:h5bp.com/s */
+	a, a:visited { text-decoration:underline; }
+	a[href]:after { content:" (" attr(href) ")"; }
+	abbr[title]:after { content:" (" attr(title) ")"; }
+	.texthidden a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content:""; }  /* Don't show links for images, or javascript/internal links */
+	pre, blockquote { border:1px solid #999; page-break-inside:avoid; }
+	thead { display:table-header-group; } /* h5bp.com/t */
+	tr, img { page-break-inside:avoid; }
+	img { max-width:100% !important; }
+	@page { margin:0.5cm; }
+	p, h2, h3 { orphans:3; widows:3; }
+	h2, h3 { page-break-after:avoid; }
+}

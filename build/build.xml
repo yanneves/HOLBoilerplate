@@ -518,7 +518,7 @@
       <copy file="${dir.intermediate}/${dir.js}/scripts-concat.min.js" tofile="${dir.publish}/${dir.js}/${scripts.sha}.js" />
   
   <!-- cachebust modules directory name -->
-      <!-- Concatenate only to generate checksum. Concatenated file not actually published. -->
+      <!-- Concatinate only to generate checksum. Concatinated file not actually published. -->
       <if>
           <available file="./${dir.intermediate}/${dir.js.modules}"/>
           <then>
@@ -661,18 +661,21 @@
         replace="&lt;link\1href='\2/${css.sha}.css'\3" flags="m">
           <fileset dir="${dir.intermediate}" includes="${page-files}"/>
       </replaceregexp>
-	  
-	  <!-- If using LESS CSS remove LESS Script from HTML -->
-	  <if>
-		<equals arg1="${build.css.less}" arg2="true"/>
-		<then>
-			<echo message="Removing LESS CSS Script from HTML..."/>
-			<!-- replaceregexp match="&lt;script src=[&quot;']${dir.js.libs}/less(.*)\.js[&quot;']&gt;&lt;/script&gt;" replace="" -->
-			<replaceregexp match="&lt;script src=[&quot;']//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.0/less-1.3.0.min.js[&quot;']&gt;&lt;/script&gt;" replace="">
-				<fileset dir="${dir.intermediate}" includes="${page-files}"/>
-			</replaceregexp>
-		</then>
-	  </if>
+      
+      <!-- Tidy up HTML when compiling LESS -->
+      <if>
+            <equals arg1="${build.css.less}" arg2="true"/>
+            <then>
+                <echo message="Removing LESS CSS Script from HTML..."/>
+                <replaceregexp match="&lt;!-- less script [\d\w\s\W]* end less script --&gt;" replace="">
+			        <fileset dir="${dir.intermediate}" includes="${page-files}"/>
+			    </replaceregexp>
+			    <echo message="Changing rel attribute to 'stylesheet' from 'stylesheet/less'"/>
+			    <replaceregexp match="rel=['&quot;]stylesheet/less['&quot;]" replace="rel='stylesheet'">
+			        <fileset dir="${dir.intermediate}" includes="${page-files}"/>
+			    </replaceregexp>
+            </then>
+        </if>
 
       <foreach list="${file.stylesheets}" param="css_file" target="-css-remove-concatenated-stylesheets" />
 
@@ -934,8 +937,8 @@
                 </if>
             </sequential>
         </for>
-				
-		<if>
+        
+        <if>
             <equals arg1="${build.css.less}" arg2="true"/>
             <then>
                 <echo message="Processing LESS CSS..."/>
@@ -945,7 +948,8 @@
                 <echo message="NOT Processing LESS CSS"/>
             </else>
         </if>
-		
+        
+        
         <echo message="Minifying css..."/>
 
         <apply executable="java" parallel="false">
@@ -1112,7 +1116,7 @@
             <!--<mapper type="glob" from="*.jpg" to="*.jpg"/>-->
         </apply>
     </target>
-	
+
 	<macrodef name="lessjs">
 	    <attribute name="input" />
 	    <attribute name="output" />
@@ -1124,8 +1128,7 @@
 	        <echo>Lessjs: generated @{output}</echo>
 	    </sequential>
 	</macrodef>
-
-
+	
 	<!-- Import project.xml (put any custom build targets in this file so that they aren't overwritten when build.xml is updated) -->
 	<!-- See: https://github.com/h5bp/html5-boilerplate/issues/704 for discussion of the original pull request-->
 	<import file="./project.xml" />
